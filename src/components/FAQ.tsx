@@ -31,7 +31,7 @@ const faqs = [
   {
     question: 'How do I get support?',
     answer:
-      'You can reach us at support@notchdrop.com or on Twitter @notchdrop. We typically respond within 24 hours.',
+      'You can reach us at muhammadsaddamnur2@gmail.com or on Threads @saddamnur. We typically respond within 24 hours.',
   },
 ];
 

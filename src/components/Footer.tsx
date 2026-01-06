@@ -45,7 +45,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:support@notchdrop.com"
+              href="mailto:muhammadsaddamnur2@gmail.com"
               className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center text-[var(--muted)] hover:text-white hover:border-white/20 transition-colors"
               aria-label="Email"
             >

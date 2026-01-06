@@ -51,7 +51,7 @@ const features = [
       </svg>
     ),
     title: 'Face Cam Overlay',
-    description: 'Add a floating face cam to your recordings. Drag, resize, and customize the shape.',
+    description: 'Add a floating face cam to your recordings. Drag, and resize.',
     color: 'from-yellow-500 to-amber-500',
   },
   {
