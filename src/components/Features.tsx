@@ -61,7 +61,7 @@ const features = [
       </svg>
     ),
     title: 'Local File Sharing',
-    description: 'Share files between devices on your network instantly. No internet required.',
+    description: 'Share files between devices on your network instantly. No internet required. cross-platform compatible (macOS, Windows, Linux, iOS, Android).',
     color: 'from-indigo-500 to-violet-500',
   },
   {
