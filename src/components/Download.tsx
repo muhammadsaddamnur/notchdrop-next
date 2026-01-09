@@ -56,7 +56,7 @@ export default function Download() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/NotchDrop.dmg"
+              href="https://drive.google.com/drive/folders/1TQ-qOLHSZDiIFVvXBe9TxlDrEOA8tN_n?usp=sharing"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium bg-white text-black rounded-xl hover:bg-white/90 transition-all hover:scale-105"
             >
               <svg
