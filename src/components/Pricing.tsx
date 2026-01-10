@@ -19,7 +19,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '$20',
+    price: '~$15',
     period: 'one-time',
     description: 'Unlock all premium features',
     features: [
@@ -33,7 +33,7 @@ const plans = [
       'Lifetime updates',
     ],
     cta: 'Get Pro License',
-    href: 'http://lynk.id/saddamnur/g8epqpyp0ewe/checkout',
+    href: 'https://lynk.id/saddamnur/g8epqpyp0ewe',
     highlighted: true,
   },
 ];
