@@ -33,7 +33,7 @@ const plans = [
       'Lifetime updates',
     ],
     cta: 'Get Pro License',
-    href: 'https://notchdrop.lemonsqueezy.com/',
+    href: 'http://lynk.id/saddamnur/g8epqpyp0ewe/checkout',
     highlighted: true,
   },
 ];
@@ -79,13 +79,11 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative p-8 rounded-2xl border transition-all duration-500 opacity-0 ${
-                isVisible ? 'animate-fade-in' : ''
-              } ${
-                plan.highlighted
+              className={`relative p-8 rounded-2xl border transition-all duration-500 opacity-0 ${isVisible ? 'animate-fade-in' : ''
+                } ${plan.highlighted
                   ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30'
                   : 'bg-[var(--card-bg)] border-[var(--card-border)]'
-              }`}
+                }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {plan.highlighted && (
@@ -113,9 +111,8 @@ export default function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3 text-sm">
                     <svg
-                      className={`w-5 h-5 ${
-                        plan.highlighted ? 'text-blue-400' : 'text-green-400'
-                      }`}
+                      className={`w-5 h-5 ${plan.highlighted ? 'text-blue-400' : 'text-green-400'
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -132,16 +129,41 @@ export default function Pricing() {
                 ))}
               </ul>
 
+              {plan.highlighted && (
+                <div className="flex items-center justify-center gap-4 mb-6 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="bg-white rounded h-6 px-1.5 flex items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/QRIS_logo.svg" alt="QRIS" className="h-4 w-auto" />
+                  </div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto brightness-0 invert" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6 w-auto" />
+                </div>
+              )}
+
               <a
                 href={plan.href}
-                className={`block w-full py-3 text-center font-medium rounded-xl transition-all hover:scale-[1.02] ${
-                  plan.highlighted
-                    ? 'bg-white text-black hover:bg-white/90'
-                    : 'border border-[var(--card-border)] hover:bg-[var(--card-bg)]'
-                }`}
+                target={plan.href.startsWith('http') ? '_blank' : undefined}
+                rel={plan.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={`block w-full py-3 text-center font-medium rounded-xl transition-all hover:scale-[1.02] ${plan.highlighted
+                  ? 'bg-white text-black hover:bg-white/90'
+                  : 'border border-[var(--card-border)] hover:bg-[var(--card-bg)]'
+                  }`}
               >
                 {plan.cta}
               </a>
+
+              {plan.highlighted && (
+                <p className="mt-4 text-xs text-[var(--muted)] text-center leading-relaxed">
+                  Processed securely via Indonesian payment gateway.<br />
+                  <a
+                    href="https://wise.com/id/currency-converter/idr-to-usd-rate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[var(--foreground)] transition-colors"
+                  >
+                    Check current USD to IDR rate
+                  </a>
+                </p>
+              )}
             </div>
           ))}
         </div>

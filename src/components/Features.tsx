@@ -61,7 +61,7 @@ const features = [
       </svg>
     ),
     title: 'Local File Sharing',
-    description: 'Share files between devices on your network instantly. No internet required. cross-platform compatible (macOS, Windows, Linux, iOS, Android).',
+    description: 'Share files between devices on your network instantly. No internet required. Cross-platform compatible (macOS, Windows, Linux, iOS, Android).',
     color: 'from-indigo-500 to-violet-500',
   },
   {
@@ -110,9 +110,8 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
   return (
     <div
       ref={ref}
-      className={`group relative p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-white/20 transition-all duration-500 hover:scale-[1.02] opacity-0 ${
-        isVisible ? 'animate-fade-in' : ''
-      }`}
+      className={`group relative p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-white/20 transition-all duration-500 hover:scale-[1.02] opacity-0 ${isVisible ? 'animate-fade-in' : ''
+        }`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Gradient glow on hover */}
