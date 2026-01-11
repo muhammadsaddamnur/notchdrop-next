@@ -116,7 +116,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
     >
       {/* Gradient glow on hover */}
       <div
-        className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}
+        className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl pointer-events-none`}
       ></div>
 
       {/* Icon */}

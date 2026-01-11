@@ -23,9 +23,8 @@ export default function Hero() {
 
       {/* Title */}
       <h1
-        className={`text-5xl md:text-7xl font-bold text-center mb-6 opacity-0 ${
-          mounted ? 'animate-fade-in stagger-1' : ''
-        }`}
+        className={`text-5xl md:text-7xl font-bold text-center mb-6 opacity-0 ${mounted ? 'animate-fade-in stagger-1' : ''
+          }`}
       >
         <span className="gradient-text">Drop files.</span>
         <br />
@@ -34,9 +33,8 @@ export default function Hero() {
 
       {/* Subtitle */}
       <p
-        className={`text-lg md:text-xl text-[var(--muted)] text-center max-w-2xl mb-12 opacity-0 ${
-          mounted ? 'animate-fade-in stagger-2' : ''
-        }`}
+        className={`text-lg md:text-xl text-[var(--muted)] text-center max-w-2xl mb-12 opacity-0 ${mounted ? 'animate-fade-in stagger-2' : ''
+          }`}
       >
         Transform your MacBook&apos;s notch into a powerful hub for files, clipboard,
         music, screen recording, and more.
@@ -44,9 +42,8 @@ export default function Hero() {
 
       {/* CTA Buttons */}
       <div
-        className={`flex flex-col sm:flex-row gap-4 mb-16 opacity-0 ${
-          mounted ? 'animate-fade-in stagger-3' : ''
-        }`}
+        className={`flex flex-col sm:flex-row gap-4 mb-16 opacity-0 ${mounted ? 'animate-fade-in stagger-3' : ''
+          }`}
       >
         <a
           href="#download"
@@ -64,12 +61,11 @@ export default function Hero() {
 
       {/* App Preview */}
       <div
-        className={`relative w-full max-w-4xl opacity-0 ${
-          mounted ? 'animate-slide-up stagger-4' : ''
-        }`}
+        className={`relative w-full max-w-4xl opacity-0 ${mounted ? 'animate-slide-up stagger-4' : ''
+          }`}
       >
         {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl -z-10 pointer-events-none"></div>
 
         {/* Screen Recording */}
         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[var(--card-border)]">

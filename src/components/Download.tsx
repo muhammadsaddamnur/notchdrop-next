@@ -26,12 +26,11 @@ export default function Download() {
   return (
     <section id="download" className="py-32 px-6" ref={ref}>
       <div
-        className={`max-w-4xl mx-auto text-center opacity-0 ${
-          isVisible ? 'animate-fade-in' : ''
-        }`}
+        className={`max-w-4xl mx-auto text-center opacity-0 ${isVisible ? 'animate-fade-in' : ''
+          }`}
       >
         {/* Background gradient */}
-        <div className="absolute inset-0 max-w-4xl mx-auto">
+        <div className="absolute inset-0 max-w-4xl mx-auto pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-3xl -z-10"></div>
         </div>
 
