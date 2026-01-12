@@ -2,6 +2,27 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+/* ===========================
+   VIDEO MAP (title → webm)
+=========================== */
+const videoMap: Record<string, string> = {
+  'File Drop Zone': '/files.webm',
+  'Clipboard History': '/clipboard.webm',
+  'Music Controls': '/music.webm',
+  'Screen Recording': '/record.webm',
+  'Camera': '/camera.webm',
+  'Local File Sharing': '/share.webm',
+  'Quick Todo': '/todo.webm',
+  'Notch Pet': '/pet.webm',
+  'Shortcut Command': '/term.webm',
+  'Screenshot': '/screenshot.webm',
+  'Screen Draw': '/screendraw.webm',
+  // 'Native & Blazing Fast': '/screendraw.webm',
+};
+
+/* ===========================
+   FEATURES (AS IS)
+=========================== */
 const features = [
   {
     icon: (
@@ -50,8 +71,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: 'Face Cam Overlay',
-    description: 'Add a floating face cam to your recordings. Drag, and resize.',
+    title: 'Camera',
+    description: 'Capture photos instantly and save them directly into your workspace.',
     color: 'from-yellow-500 to-amber-500',
   },
   {
@@ -94,9 +115,31 @@ const features = [
           d="M4 6h16M4 12h16M4 18h16M9 9l3 3-3 3" />
       </svg>
     ),
-    title: 'Execute Terminal',
+    title: 'Shortcut Command',
     description: 'Run terminal commands straight from the notch. Trigger scripts, manage servers, or automate tasks without opening Terminal.',
     color: 'from-slate-500 to-zinc-700',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4h16v12H4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 20h8" />
+      </svg>
+    ),
+    title: 'Screenshot',
+    description: 'Capture any part of your screen instantly and save it for later or sharing.',
+    color: 'from-indigo-500 to-blue-500',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536M9 11l6-6 3 3-6 6H9v-4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 21H4" />
+      </svg>
+    ),
+    title: 'Screen Draw',
+    description: 'Draw, highlight, and annotate directly on your screen in real time.',
+    color: 'from-pink-500 to-rose-500',
   },
   {
     icon: (
@@ -108,80 +151,94 @@ const features = [
     description: 'Built with Swift for maximum performance. No Electron, no web views, pure native.',
     color: 'from-pink-500 to-rose-500',
   },
+
 ];
 
-function FeatureCard({ feature, index }: { feature: typeof features[0]; index: number }) {
+/* ===========================
+   FEATURE CARD (unchanged UI + click)
+=========================== */
+function FeatureCard({
+  feature,
+  index,
+  onClick,
+}: {
+  feature: typeof features[0];
+  index: number;
+  onClick: () => void;
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsVisible(true);
+    }, { threshold: 0.1 });
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
     <div
       ref={ref}
-      className={`group relative p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-white/20 transition-all duration-500 hover:scale-[1.02] opacity-0 ${isVisible ? 'animate-fade-in' : ''
-        }`}
+      onClick={onClick}
+      className={`cursor-pointer group relative p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-white/20 transition-all duration-500 hover:scale-[1.02] opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      {/* Gradient glow on hover */}
-      <div
-        className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl pointer-events-none`}
-      ></div>
-
-      {/* Icon */}
-      <div
-        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-3 text-white mb-4`}
-      >
+      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition blur-xl`} />
+      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-3 text-white mb-4`}>
         {feature.icon}
       </div>
-
-      {/* Content */}
       <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-      <p className="text-sm text-[var(--muted)] leading-relaxed">
-        {feature.description}
-      </p>
+      <p className="text-sm text-[var(--muted)] leading-relaxed">{feature.description}</p>
     </div>
   );
 }
 
+/* ===========================
+   MAIN
+=========================== */
 export default function Features() {
-  return (
-    <section id="features" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Everything you need,</span>
-            <br />
-            right in your notch.
-          </h2>
-          <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-            NotchDrop transforms your MacBook&apos;s notch from a dead space into your most productive companion.
-          </p>
-        </div>
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {features.map((feature, index) => (
-            <FeatureCard key={feature.title} feature={feature} index={index} />
-          ))}
+  return (
+    <>
+      {/* Video Overlay (small & classy) */}
+      {activeVideo && (
+        <div
+          onClick={() => setActiveVideo(null)}
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-black/80 rounded-2xl p-3 shadow-2xl"
+          >
+            <video
+              src={activeVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-[500px] md:w-[720px] rounded-xl"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      )}
+
+      <section id="features" className="py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={feature.title}
+                feature={feature}
+                index={index}
+                onClick={() => setActiveVideo(videoMap[feature.title])}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
