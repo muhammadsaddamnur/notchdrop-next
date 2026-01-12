@@ -14,7 +14,7 @@ const videoMap: Record<string, string> = {
   'Local File Sharing': '/share.webm',
   'Quick Todo': '/todo.webm',
   'Notch Pet': '/pet.webm',
-  'Shortcut Command': '/term.webm',
+  'Command shortcut': '/term.webm',
   'Screenshot': '/screenshot.webm',
   'Screen Draw': '/screendraw.webm',
   // 'Native & Blazing Fast': '/screendraw.webm',
@@ -115,7 +115,7 @@ const features = [
           d="M4 6h16M4 12h16M4 18h16M9 9l3 3-3 3" />
       </svg>
     ),
-    title: 'Shortcut Command',
+    title: 'Command shortcut',
     description: 'Run terminal commands straight from the notch. Trigger scripts, manage servers, or automate tasks without opening Terminal.',
     color: 'from-slate-500 to-zinc-700',
   },
