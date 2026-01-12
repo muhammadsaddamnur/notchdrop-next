@@ -77,6 +77,30 @@ const features = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M12 14c-2.5 0-4 1.5-4 3.5S9.5 21 12 21s4-1.5 4-3.5S14.5 14 12 14z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M8 10a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-7-2a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+      </svg>
+    ),
+    title: 'Notch Pet',
+    description: 'A cute little pet living in your notch. It reacts to your activity, sleeps when idle, and keeps you company while you work.',
+    color: 'from-amber-400 to-orange-500',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M4 6h16M4 12h16M4 18h16M9 9l3 3-3 3" />
+      </svg>
+    ),
+    title: 'Execute Terminal',
+    description: 'Run terminal commands straight from the notch. Trigger scripts, manage servers, or automate tasks without opening Terminal.',
+    color: 'from-slate-500 to-zinc-700',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
