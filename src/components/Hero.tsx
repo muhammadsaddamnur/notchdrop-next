@@ -42,7 +42,7 @@ export default function Hero() {
 
       {/* CTA Buttons */}
       <div
-        className={`flex flex-col sm:flex-row gap-4 mb-16 opacity-0 ${mounted ? 'animate-fade-in stagger-3' : ''
+        className={`flex flex-col sm:flex-row gap-4 mb-8 opacity-0 ${mounted ? 'animate-fade-in stagger-3' : ''
           }`}
       >
         <a
@@ -56,6 +56,24 @@ export default function Hero() {
           className="px-8 py-4 text-lg font-medium border border-[var(--card-border)] rounded-xl hover:bg-[var(--card-bg)] transition-all hover:scale-105"
         >
           Get Pro License
+        </a>
+      </div>
+
+      {/* Product Hunt Badge */}
+      <div
+        className={`mb-16 opacity-0 ${mounted ? 'animate-fade-in stagger-3' : ''}`}
+      >
+        <a
+          href="https://www.producthunt.com/products/notchdrop?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-notchdrop"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1064578&theme=light&t=1768756129884"
+            alt="NotchDrop - Turn your MacBook notch into a powerful productivity hub. | Product Hunt"
+            width="250"
+            height="54"
+          />
         </a>
       </div>
 
