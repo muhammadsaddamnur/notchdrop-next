@@ -33,13 +33,14 @@ const plans = [
       'Lifetime updates',
     ],
     cta: 'Get Pro License',
-    href: 'https://lynk.id/saddamnur/g8epqpyp0ewe',
+    href: '#',
     highlighted: true,
   },
 ];
 
 export default function Pricing() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showPaymentDialog, setShowPaymentDialog] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -139,30 +140,20 @@ export default function Pricing() {
                 </div>
               )}
 
-              <a
-                href={plan.href}
-                target={plan.href.startsWith('http') ? '_blank' : undefined}
-                rel={plan.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={`block w-full py-3 text-center font-medium rounded-xl transition-all hover:scale-[1.02] ${plan.highlighted
-                  ? 'bg-white text-black hover:bg-white/90'
-                  : 'border border-[var(--card-border)] hover:bg-[var(--card-bg)]'
-                  }`}
-              >
-                {plan.cta}
-              </a>
-
-              {plan.highlighted && (
-                <p className="mt-4 text-xs text-[var(--muted)] text-center leading-relaxed">
-                  Processed securely via Indonesian payment gateway.<br />
-                  <a
-                    href="https://wise.com/id/currency-converter/idr-to-usd-rate"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-[var(--foreground)] transition-colors"
-                  >
-                    Check current USD to IDR rate
-                  </a>
-                </p>
+              {plan.highlighted ? (
+                <button
+                  onClick={() => setShowPaymentDialog(true)}
+                  className="block w-full py-3 text-center font-medium rounded-xl transition-all hover:scale-[1.02] bg-white text-black hover:bg-white/90"
+                >
+                  {plan.cta}
+                </button>
+              ) : (
+                <a
+                  href={plan.href}
+                  className="block w-full py-3 text-center font-medium rounded-xl transition-all hover:scale-[1.02] border border-[var(--card-border)] hover:bg-[var(--card-bg)]"
+                >
+                  {plan.cta}
+                </a>
               )}
             </div>
           ))}
@@ -173,6 +164,87 @@ export default function Pricing() {
           30-day money-back guarantee. No questions asked.
         </p> */}
       </div>
+
+      {/* Payment Dialog */}
+      {showPaymentDialog && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setShowPaymentDialog(false)}
+        >
+          <div
+            className="relative w-full max-w-md p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowPaymentDialog(false)}
+              className="absolute top-4 right-4 p-1 text-[var(--muted)] hover:text-white transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Dialog header */}
+            <h3 className="text-xl font-semibold mb-2">Choose Payment Method</h3>
+            <p className="text-sm text-[var(--muted)] mb-6">Select your preferred payment gateway</p>
+
+            {/* Payment options */}
+            <div className="space-y-3">
+              {/* Gumroad */}
+              <a
+                href="https://saddamnur.gumroad.com/l/notchdrop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 w-full p-4 rounded-xl border border-[var(--card-border)] hover:bg-white/5 hover:border-white/20 transition-all group"
+              >
+                <img src="/gumroad-icon.svg" alt="Gumroad" className="w-12 h-12 rounded-xl" />
+                <div className="flex-1 text-left">
+                  <div className="font-medium group-hover:text-white transition-colors">Gumroad</div>
+                  <div className="text-sm text-[var(--muted)]">$15 USD • International payments</div>
+                </div>
+                <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              {/* Lynk.id */}
+              <a
+                href="https://lynk.id/saddamnur/g8epqpyp0ewe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 w-full p-4 rounded-xl border border-[var(--card-border)] hover:bg-white/5 hover:border-white/20 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                  <img src="/lynk-icon.webp" alt="Lynk.id" className="w-8 h-8 object-contain" />
+                </div>
+                <div className="flex-1 text-left">
+                  <div className="font-medium group-hover:text-white transition-colors">Lynk.id</div>
+                  <div className="text-sm text-[var(--muted)]">250.000 IDR • QRIS, Bank Transfer</div>
+                  <p className="text-xs text-[var(--muted)] text-left pt-1">
+                    Processed securely via Indonesian payment gateway.
+                  </p>
+                </div>
+                <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Exchange rate link */}
+            <div className="mt-6 pt-4 border-t border-[var(--card-border)]">
+              <a
+                href="https://wise.com/id/currency-converter/usd-to-idr-rate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[var(--muted)] hover:text-white transition-colors underline"
+              >
+                Check current USD to IDR rate
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
