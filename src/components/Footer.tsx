@@ -16,6 +16,34 @@ export default function Footer() {
             </span>
           </div>
 
+          {/* Featured Badges */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://twelve.tools"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://twelve.tools/badge0-dark.svg"
+                alt="Featured on Twelve Tools"
+                width="200"
+                height="54"
+              />
+            </a>
+            <a
+              href="https://startupfa.me/s/notchdrop?utm_source=notchdrop.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://startupfa.me/badges/featured-badge.webp"
+                alt="NotchDrop - Featured on Startup Fame"
+                width="171"
+                height="54"
+              />
+            </a>
+          </div>
+
           {/* Social Links */}
           {/* <div className="flex items-center gap-4">
             <a
