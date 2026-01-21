@@ -224,6 +224,9 @@ export default function Pricing() {
                   <p className="text-xs text-[var(--muted)] text-left pt-1">
                     Processed securely via Indonesian payment gateway.
                   </p>
+                  <p className="text-xs text-green-400 text-left pt-1">
+                    <a href="https://www.producthunt.com/products/notchdrop" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-300">20% off! Get the code on Product Hunt</a>
+                  </p>
                 </div>
                 <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
