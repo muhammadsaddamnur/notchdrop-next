@@ -29,6 +29,8 @@ const plans = [
       'Face cam overlay',
       'Local file sharing',
       'Quick todo list',
+      'AI Chat',
+      'AI Notes',
       'Priority support',
       'Lifetime updates',
     ],
@@ -135,7 +137,7 @@ export default function Pricing() {
                   <div className="bg-white rounded h-6 px-1.5 flex items-center">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/QRIS_logo.svg" alt="QRIS" className="h-4 w-auto" />
                   </div>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto brightness-0 invert" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Visa_Inc._logo_%282005%E2%80%932014%29.svg/1920px-Visa_Inc._logo_%282005%E2%80%932014%29.svg.png?20170118154621" alt="Visa" className="h-4 w-auto brightness-0 invert" />
                   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6 w-auto" />
                 </div>
               )}

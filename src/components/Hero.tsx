@@ -36,7 +36,7 @@ export default function Hero() {
         className={`text-lg md:text-xl text-[var(--muted)] text-center max-w-2xl mb-12 opacity-0 ${mounted ? 'animate-fade-in stagger-2' : ''
           }`}
       >
-        Transform your MacBook&apos;s notch into a powerful hub for files, clipboard,
+        Transform your MacBook&apos;s notch into a powerful hub for AI Chat, AI Notes, files, clipboard,
         music, screen recording, and more.
       </p>
 

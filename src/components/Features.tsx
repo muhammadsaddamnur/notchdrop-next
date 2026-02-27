@@ -18,12 +18,37 @@ const videoMap: Record<string, string> = {
   'Screenshot': '/screenshot.webm',
   'Screen Draw': '/screendraw.webm',
   // 'Native & Blazing Fast': '/screendraw.webm',
+  'AI Chat': '/chat.webm',
+  'AI Notes': '/notes.webm',
 };
 
 /* ===========================
    FEATURES (AS IS)
 =========================== */
 const features = [
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+    ),
+    title: 'AI Chat',
+    description: 'Chat with AI directly from your notch. Ask questions, get answers, and boost productivity without leaving your workflow. (Use your own API key)',
+    color: 'from-violet-500 to-purple-600',
+    badge: 'New',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 3v4a1 1 0 001 1h4" />
+      </svg>
+    ),
+    title: 'AI Notes',
+    description: 'Take notes and let AI generate smart summaries and meeting minutes automatically. Never miss a key point again. (Use your own API key)',
+    color: 'from-emerald-500 to-teal-600',
+    badge: 'New',
+  },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +176,6 @@ const features = [
     description: 'Built with Swift for maximum performance. No Electron, no web views, pure native.',
     color: 'from-pink-500 to-rose-500',
   },
-
 ];
 
 /* ===========================
@@ -186,6 +210,13 @@ function FeatureCard({
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition blur-xl`} />
+      {'badge' in feature && feature.badge && (
+        <div className="absolute top-3 right-3">
+          <span className={`px-2 py-0.5 text-[10px] font-semibold rounded-full bg-gradient-to-r ${feature.color} text-white`}>
+            {feature.badge}
+          </span>
+        </div>
+      )}
       <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-3 text-white mb-4`}>
         {feature.icon}
       </div>
