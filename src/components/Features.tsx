@@ -33,7 +33,7 @@ const features = [
       </svg>
     ),
     title: 'AI Chat',
-    description: 'Chat with AI directly from your notch. Ask questions, get answers, and boost productivity without leaving your workflow. (Use your own API key)',
+    description: 'Chat with AI directly from your notch. Ask questions, get answers, and boost productivity without leaving your workflow. Full control by allowing you to use your own API key for maximum privacy and efficiency.',
     color: 'from-violet-500 to-purple-600',
     badge: 'New',
   },
@@ -45,7 +45,7 @@ const features = [
       </svg>
     ),
     title: 'AI Notes',
-    description: 'Take notes and let AI generate smart summaries and meeting minutes automatically. Never miss a key point again. (Use your own API key)',
+    description: 'Take notes and let AI generate smart summaries and meeting minutes automatically. Never miss a key point again. Full control by allowing you to use your own API key for maximum privacy and efficiency.',
     color: 'from-emerald-500 to-teal-600',
     badge: 'New',
   },
