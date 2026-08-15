@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const payhipCheckoutUrl =
+  process.env.NEXT_PUBLIC_PAYHIP_CHECKOUT_URL ?? 'https://payhip.com/b/gLYS1';
+
 const plans = [
   {
     name: 'Free',
@@ -19,7 +22,8 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '~$15',
+    price: '$15',
+    originalPrice: '$17',
     period: 'one-time',
     description: 'Unlock all premium features',
     features: [
@@ -100,6 +104,11 @@ export default function Pricing() {
               <div className="mb-6">
                 <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-2">
+                  {plan.originalPrice && (
+                    <span className="text-lg text-[var(--muted)] line-through">
+                      {plan.originalPrice}
+                    </span>
+                  )}
                   <span className="text-4xl font-bold">{plan.price}</span>
                   {plan.period && (
                     <span className="text-[var(--muted)]">{plan.period}</span>
@@ -193,6 +202,30 @@ export default function Pricing() {
 
             {/* Payment options */}
             <div className="space-y-3">
+              {/* Payhip */}
+              <a
+                href={payhipCheckoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center gap-4 w-full p-4 rounded-xl border border-[#5C6AC4]/70 bg-[#5C6AC4]/10 ring-1 ring-[#5C6AC4]/20 hover:bg-[#5C6AC4]/15 hover:border-[#7c89db] transition-all group"
+              >
+                <span className="absolute -top-2.5 right-3 px-2.5 py-1 rounded-full bg-[#5C6AC4] text-[10px] font-semibold uppercase tracking-wide text-white shadow-lg">
+                  Recommended · Save $2
+                </span>
+                <img src="/payhip-icon.svg" alt="Payhip" className="w-12 h-12 rounded-xl" />
+                <div className="flex-1 text-left">
+                  <div className="font-medium group-hover:text-white transition-colors">Payhip</div>
+                  <div className="text-sm">
+                    <span className="text-[var(--muted)] line-through mr-2">$17</span>
+                    <span className="font-semibold text-green-400">$15 USD</span>
+                    <span className="text-[var(--muted)]"> • International payments</span>
+                  </div>
+                </div>
+                <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
               {/* Gumroad */}
               <a
                 href="https://saddamnur.gumroad.com/l/notchdrop"
@@ -203,7 +236,7 @@ export default function Pricing() {
                 <img src="/gumroad-icon.svg" alt="Gumroad" className="w-12 h-12 rounded-xl" />
                 <div className="flex-1 text-left">
                   <div className="font-medium group-hover:text-white transition-colors">Gumroad</div>
-                  <div className="text-sm text-[var(--muted)]">$15 USD • International payments</div>
+                  <div className="text-sm text-[var(--muted)]">$17 USD • International payments</div>
                 </div>
                 <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

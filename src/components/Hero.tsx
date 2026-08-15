@@ -26,9 +26,9 @@ export default function Hero() {
         className={`text-5xl md:text-7xl font-bold text-center mb-6 opacity-0 ${mounted ? 'animate-fade-in stagger-1' : ''
           }`}
       >
-        <span className="gradient-text">Drop files.</span>
+        <span className="gradient-text">Everything you need.</span>
         <br />
-        <span className="text-white">Right from your notch.</span>
+        <span className="text-white">Nothing you don&apos;t.</span>
       </h1>
 
       {/* Subtitle */}
