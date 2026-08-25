@@ -11,13 +11,15 @@ const plans = [
     price: '$0',
     description: 'Get started with essential features',
     features: [
-      'File drop zone',
+      'File drop zone with AirDrop',
       'Clipboard history',
-      'Basic settings',
+      'Calculator',
+      'MacBook system status',
+      'Keep Awake',
       'Forever free',
     ],
     cta: 'Download Free',
-    href: '#download',
+    href: 'https://cdn.notchdrop.com/NotchDrop-2.0.dmg?v=f86eb1042221',
     highlighted: false,
   },
   {
@@ -28,13 +30,14 @@ const plans = [
     description: 'Unlock all premium features',
     features: [
       'Everything in Free',
-      'Music controls',
-      'Screen recording with smart zoom',
-      'Face cam overlay',
-      'Local file sharing',
-      'Quick todo list',
-      'AI Chat',
-      'AI Notes',
+      'Draw signatures & Screen Draw',
+      'Todo & Calendar',
+      'Cross-platform local file sharing',
+      'Music controls & Camera',
+      'Screen recording & NotchDrop Studio',
+      'Notch Pet & Notch Terminal',
+      'AI Chat & AI Notes',
+      'Live wallpaper & custom themes',
       'Priority support',
       'Lifetime updates',
     ],
@@ -258,9 +261,6 @@ export default function Pricing() {
                   <div className="text-sm text-[var(--muted)]">250.000 IDR • QRIS, Bank Transfer</div>
                   <p className="text-xs text-[var(--muted)] text-left pt-1">
                     Processed securely via Indonesian payment gateway.
-                  </p>
-                  <p className="text-xs text-green-400 text-left pt-1">
-                    <a href="https://www.producthunt.com/products/notchdrop" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-300">20% off! Get the code on Product Hunt</a>
                   </p>
                 </div>
                 <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

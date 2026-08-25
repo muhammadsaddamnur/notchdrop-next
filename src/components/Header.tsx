@@ -58,7 +58,7 @@ export default function Header() {
               v1.0
             </span>
             <Link
-              href="#download"
+              href="https://cdn.notchdrop.com/NotchDrop-2.0.dmg?v=f86eb1042221"
               className="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-white/90 transition-colors"
             >
               Download

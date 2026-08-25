@@ -16,7 +16,7 @@ const faqs = [
   {
     question: 'What features are free?',
     answer:
-      'The free version includes the file drop zone and clipboard history. Premium features like music controls, screen recording, face cam overlay, file sharing, and todo list require a Pro license.',
+      'The free version includes Files with AirDrop sharing, Clipboard, Calculator, MacBook System Status, and Keep Awake. Pro unlocks Draw, Todo, Local File Sharing, Music, Camera, Screen Recording with NotchDrop Studio, Pet, Terminal, AI Chat, AI Notes, Calendar, Live Wallpaper, Custom Themes, and more.',
   },
   {
     question: 'Can I use my license on multiple Macs?',

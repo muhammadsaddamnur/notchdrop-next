@@ -13,6 +13,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <div className="max-w-6xl mx-auto mt-24 px-6" aria-hidden="true">
+          <div className="relative flex items-center justify-center">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            <div className="absolute w-2 h-2 rotate-45 rounded-[2px] border border-white/25 bg-[var(--background)]" />
+          </div>
+        </div>
         <Features />
         <Pricing />
         <Download />

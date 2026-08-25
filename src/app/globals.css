@@ -82,6 +82,24 @@ html {
   }
 }
 
+@keyframes tagline-cycle {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(12px) scale(0.985);
+  }
+  2.5%, 20% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  22.5%, 100% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-12px) scale(0.985);
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -92,6 +110,24 @@ html {
 
 .animate-slide-up {
   animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-tagline-cycle {
+  opacity: 0;
+  animation: tagline-cycle 21s cubic-bezier(0.22, 1, 0.36, 1) infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tagline-cycle {
+    animation: none;
+    opacity: 0;
+    filter: none;
+    transform: none;
+  }
+
+  .animate-tagline-cycle:first-child {
+    opacity: 1;
+  }
 }
 
 /* Staggered animations */
