@@ -20,7 +20,11 @@ To configure the Payhip checkout link, add this variable to `.env.local`:
 
 ```env
 NEXT_PUBLIC_PAYHIP_CHECKOUT_URL=https://payhip.com/b/gLYS1
+NEXT_PUBLIC_PAYHIP_CHECKOUT_URL_2_DEVICES=https://payhip.com/b/2NT4L
+NEXT_PUBLIC_PAYHIP_CHECKOUT_URL_4_DEVICES=https://payhip.com/b/n5zBe
 ```
+
+Create separate Payhip products for **2 devices ($25 USD)** and **4 devices ($45 USD)**, then fill in their checkout URLs above. Blank bundle URLs show an unavailable message instead of opening the single-device checkout. Rebuild/redeploy the web app after changing these variables. Configure the corresponding product IDs on the backend before enabling the links; see `backend-express/API_USAGE.md` in the parent workspace. Gumroad and Lynk remain single-device options.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

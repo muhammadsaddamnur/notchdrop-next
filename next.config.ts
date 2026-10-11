@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    // Resolve dependencies from the web app, even when launched from its parent.
+    root: __dirname,
+  },
 };
 
 export default nextConfig;
