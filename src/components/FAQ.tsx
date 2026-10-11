@@ -21,7 +21,12 @@ const faqs = [
   {
     question: 'Can I use my license on multiple Macs?',
     answer:
-      'Each license is valid for one Mac at a time.',
+      'Each license key is valid for one Mac at a time. Choose 1 device for $15, 2 devices for $25, or 4 devices for $45 via Payhip. The 2-device and 4-device packages include 2 or 4 separate license keys, all delivered together by email. These are one-time purchases with lifetime updates.',
+  },
+  {
+    question: 'Can I request a refund?',
+    answer:
+      'Yes. We offer a 7-day money-back guarantee, no questions asked. To request a refund, email us at muhammadsaddamnur2@gmail.com with the email address you used for your purchase.',
   },
   {
     question: 'Does NotchDrop affect battery life?',
