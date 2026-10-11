@@ -333,6 +333,7 @@ export default function Pricing() {
             </div>
 
             {/* Exchange rate link */}
+            {selectedPackage.devices === 1 && (
             <div className="mt-6 pt-4 border-t border-[var(--card-border)]">
               <a
                 href="https://wise.com/id/currency-converter/usd-to-idr-rate"
@@ -343,6 +344,7 @@ export default function Pricing() {
                 Check current USD to IDR rate
               </a>
             </div>
+            )}
           </div>
         </div>
       )}
